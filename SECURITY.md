@@ -38,7 +38,7 @@ somente plugins em que confia.
 
 ## Versões
 
-Esta publicação descreve a versão 0.2.0. Use uma release fixa, confira
+Esta publicação descreve a versão 0.2.1. Use uma release fixa, confira
 os hashes publicados e leia as mudanças antes de substituir os arquivos. O
 plugin não instala atualizações nem dependências automaticamente. A presença
 no catálogo ou um resultado de scanner não equivale a endosso do provedor ou

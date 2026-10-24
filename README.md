@@ -5,14 +5,16 @@ usando criptografia no aparelho e histórico de revisões. Este é um **plugin
 independente da comunidade**, sem afiliação, certificação ou aprovação da
 Magalu Cloud ou do Obsidian.
 
-Versão desta publicação: **0.2.0**. Obsidian mínimo: **1.13.0**.
+Versão desta publicação: **0.2.1**. Obsidian mínimo: **1.13.0**.
 O programa usa APIs portáteis para Windows e Android. A validação em Android
 físico ainda precisa ser concluída; teste primeiro com um cofre fictício.
 
-A preparação de 0.2.0 passou por 173 testes automatizados e pelos
-autotestes local e S3 no Obsidian Windows 1.13.7. A integração real conferiu
-gravação, leitura limitada com HEAD e HTTP 206, criptografia, integridade e
-reenvio. Isso não equivale a aprovação no catálogo ou auditoria independente.
+O projeto passou por mais de 170 testes automatizados. Os autotestes local e
+S3 no Obsidian Windows 1.13.7 foram concluídos com a versão 0.2.0. No Android,
+a leitura foi confirmada com 0.2.0, mas o envio falhou; a correção precisa de
+nova aceitação no aparelho. Consulte as notas de cada release para os
+resultados da versão exata. Esses testes não equivalem a aprovação no
+catálogo ou auditoria independente.
 
 ## Requisitos e custos
 
@@ -38,11 +40,16 @@ e a cobrança na documentação do provedor.
    fictícias antes de habilitar no seu material de trabalho.
 2. Escolha uma pasta local fora de OneDrive, Google Drive, Dropbox ou outro
    sincronizador. Use somente um mecanismo de sincronização por pasta.
-3. Baixe os arquivos da [release 0.2.0](https://github.com/SergioRicJr/magalu-vault-sync-releases/releases/tag/0.2.0)
-   e confira `SHA256SUMS.txt`. Os três arquivos instaláveis são `main.js`,
-   `manifest.json` e `styles.css`. O ZIP automático de código do GitHub não
-   deve ser confundido com um pacote de instalação.
-4. Com o Obsidian fechado, copie os três arquivos para:
+3. Baixe o pacote `magalu-vault-sync-0.2.1.zip` da
+   [release 0.2.1](https://github.com/SergioRicJr/magalu-vault-sync-releases/releases/tag/0.2.1)
+   e confira seu arquivo `.zip.sha256`. Ele contém a pasta
+   `magalu-vault-sync` com três arquivos de programa, LICENSE e NOTICE.
+   Também é possível baixar `main.js`, `manifest.json` e `styles.css`
+   individualmente e conferir `SHA256SUMS.txt`. O ZIP automático “Source
+   code” do GitHub é diferente do pacote de instalação.
+4. Com o Obsidian fechado, extraia a pasta do plugin para
+   `<SEU_COFRE>/.obsidian/plugins/`. Os três arquivos de programa devem ficar
+   diretamente em:
 
    ```text
    <SEU_COFRE>/.obsidian/plugins/magalu-vault-sync/
@@ -116,8 +123,9 @@ no mesmo caminho podem virar ramos de conflito.
 2. Abra o cofre uma vez e feche o aplicativo. Habilite a exibição de arquivos
    ocultos no gerenciador de arquivos, se necessário.
 3. Copie somente `main.js`, `manifest.json` e `styles.css` para
-   `<SEU_COFRE>/.obsidian/plugins/magalu-vault-sync/`. Não coloque uma pasta
-   extra entre o nome do plugin e esses arquivos.
+   `<SEU_COFRE>/.obsidian/plugins/magalu-vault-sync/`. O ZIP de instalação
+   contém essa pasta pronta. Não deixe os arquivos soltos em `plugins/`
+   nem crie outra pasta entre `magalu-vault-sync` e os arquivos.
 4. Reabra o Obsidian e habilite o plugin em **Plugins da comunidade**.
 5. Use **Abrir assistente → Conectar ao cofre existente** e escolha a
    mesma região, bucket e prefixo. Cadastre o par S3 do celular e
