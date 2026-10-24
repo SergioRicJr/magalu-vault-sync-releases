@@ -1,0 +1,3 @@
+.magalu-sync-status { white-space: normal; }
+.magalu-sync-warning { color: var(--text-warning); }
+.magalu-sync-recovery { overflow-wrap: anywhere; }
