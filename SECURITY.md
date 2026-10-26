@@ -31,6 +31,13 @@ recifra os objetos já gravados. Uma chave de recuperação exposta exige um
 procedimento de migração de dados; não gere outra sobre o mesmo prefixo como
 tentativa de corrigir o problema.
 
+A chave de recuperação não é a senha da conta Magalu. Ela representa a
+chave AES que abre o histórico remoto e não é enviada pela sincronização.
+Sem a chave original, o plugin não recupera esse conteúdo; não há redefinição
+de senha, rotação ou migração automática da chave no mesmo destino. Uma
+troca de credencial S3 não revoga uma cópia já obtida da chave AES ou de dados
+descriptografados.
+
 O SecretStorage do Obsidian é compartilhado com o ambiente dos plugins e não
 fornece isolamento contra outros plugins ou contra um processo local
 malicioso. Mantenha backups independentes, proteja os dispositivos e habilite
