@@ -5,16 +5,53 @@ usando criptografia no aparelho e histórico de revisões. Este é um **plugin
 independente da comunidade**, sem afiliação, certificação ou aprovação da
 Magalu Cloud ou do Obsidian.
 
-Versão desta publicação: **0.2.1**. Obsidian mínimo: **1.13.0**.
+Versão desta publicação: **0.2.2**. Obsidian mínimo: **1.13.0**.
 O programa usa APIs portáteis para Windows e Android. A validação em Android
 físico ainda precisa ser concluída; teste primeiro com um cofre fictício.
 
-O projeto passou por mais de 170 testes automatizados. Os autotestes local e
-S3 no Obsidian Windows 1.13.7 foram concluídos com a versão 0.2.0. No Android,
-a leitura foi confirmada com 0.2.0, mas o envio falhou; a correção precisa de
-nova aceitação no aparelho. Consulte as notas de cada release para os
-resultados da versão exata. Esses testes não equivalem a aprovação no
-catálogo ou auditoria independente.
+O projeto passou por mais de 200 testes automatizados, incluindo uma
+regressão de Base64 e AES-GCM com anexo de 20 MiB. A versão 0.2.1 teve
+sincronização confirmada em Windows e Android, incluindo recebimento no
+computador de uma nota fictícia criada no celular. Consulte as notas de
+cada release para os resultados da versão exata. Esses testes não equivalem
+a aprovação no catálogo ou auditoria independente.
+
+## Como a sincronização funciona
+
+As notas continuam sendo arquivos locais comuns. Escreva nas pastas normais
+do cofre; não existe uma pasta especial obrigatória para enviar notas.
+Arquivos e pastas com ponto inicial, a configuração do Obsidian e a
+recuperação local ficam fora da sincronização.
+
+1. O plugin compara os arquivos locais com o último estado conhecido e
+   registra a intenção em uma fila persistente antes de tentar enviar.
+2. Cada edição vira uma revisão com UUID e referências às revisões
+   anteriores. O arquivo alterado é enviado por inteiro; não são deltas de texto.
+3. Conteúdo, caminho e metadados são criptografados no aparelho antes do S3.
+   O bucket recebe objetos com identificadores, sem os nomes das suas notas.
+4. O outro aparelho lista as revisões, autentica e descriptografa as que
+   precisa conhecer ou aplicar, e preserva alterações concorrentes.
+5. Antes de substituir ou remover um arquivo local, registra a operação e
+   mantém uma cópia de recuperação. Exclusões remotas são revisões do
+   histórico; o plugin não apaga objetos definitivamente.
+
+Na versão 0.2.2, uma rodada comprovadamente inalterada pode usar os IDs já
+autenticados em cache, sem baixar novamente os conteúdos nem regravar notas.
+Ainda há leitura local, listagem remota e persistência do horário da rodada.
+Isso pressupõe IDs de revisão imutáveis e não é uma auditoria contínua de
+todo o ciphertext armazenado. Novas revisões e conteúdos baixados continuam
+exigindo validação e autenticação antes da aplicação.
+
+A fila e parte do estado local podem conter conteúdo em Base64, que é uma
+representação legível, não criptografia. Não copie o estado entre aparelhos
+nem o publique. A credencial S3 autoriza o armazenamento; a chave de
+recuperação abre o conteúdo criptografado. Guarde essa chave fora do cofre.
+
+Um aparelho novo precisa inspecionar revisões desconhecidas para reconstruir
+o histórico; isso pode incluir versões antigas de arquivos. O histórico
+cresce, não há expurgo automático e a transferência inicial pode ser maior
+que o tamanho das notas atuais. Conteúdos temporários de descoberta podem
+ser descartados e relidos para manter o orçamento de trabalho.
 
 ## Requisitos e custos
 
@@ -40,8 +77,8 @@ e a cobrança na documentação do provedor.
    fictícias antes de habilitar no seu material de trabalho.
 2. Escolha uma pasta local fora de OneDrive, Google Drive, Dropbox ou outro
    sincronizador. Use somente um mecanismo de sincronização por pasta.
-3. Baixe o pacote `magalu-vault-sync-0.2.1.zip` da
-   [release 0.2.1](https://github.com/SergioRicJr/magalu-vault-sync-releases/releases/tag/0.2.1)
+3. Baixe o pacote `magalu-vault-sync-0.2.2.zip` da
+   [release 0.2.2](https://github.com/SergioRicJr/magalu-vault-sync-releases/releases/tag/0.2.2)
    e confira seu arquivo `.zip.sha256`. Ele contém a pasta
    `magalu-vault-sync` com três arquivos de programa, LICENSE e NOTICE.
    Também é possível baixar `main.js`, `manifest.json` e `styles.css`

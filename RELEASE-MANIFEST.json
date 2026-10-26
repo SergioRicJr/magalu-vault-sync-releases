@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "repository": "SergioRicJr/magalu-vault-sync-releases",
   "pluginId": "magalu-vault-sync",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "files": [
     {
       "path": "LICENSE",
@@ -16,23 +16,23 @@
     },
     {
       "path": "README.md",
-      "bytes": 14301,
-      "sha256": "2bb9ca1b2bc2bc12233af1cae524e50519379624bfb44ec2b39b1cc1a24a8237"
+      "bytes": 16558,
+      "sha256": "f3f08960984e939a91d0949c64d3a001e3ee79a847483302a1bdb1c811343739"
     },
     {
       "path": "SECURITY.md",
       "bytes": 2347,
-      "sha256": "b5f574612e4c7b0c29e3cd6b02414cfcebfef58c2ddf2dd37526b92c9427552a"
+      "sha256": "a95f10f5a1c6015ab24fe72fdddca64f8746559556f849af26d70392083f803d"
     },
     {
       "path": "main.js",
-      "bytes": 76928,
-      "sha256": "6616a7f04c7016ec097db07dc428e0301bcf75854b9bac04c468425a204d5198"
+      "bytes": 80607,
+      "sha256": "17d1d58c0e1db717a699b11876cfb153533fac88ef33ac9b6502ade41af5acfb"
     },
     {
       "path": "manifest.json",
       "bytes": 275,
-      "sha256": "7edaa5f6b642caed9fd01c20ca22386fff7a19394e587fdcb7c2dabf5754b137"
+      "sha256": "34c0ba7776e5a698e1fe920b78a949abcbd3c37b7105b3732a519df37b326b72"
     },
     {
       "path": "styles.css",
@@ -41,8 +41,8 @@
     },
     {
       "path": "versions.json",
-      "bytes": 45,
-      "sha256": "4042f66c82fdb0df170f7d2fa1a79db8bf1dba92fa277cc0a11aca39a5a4415d"
+      "bytes": 66,
+      "sha256": "c6ffbedd8f5cd7e23f06ba91246af6626cbd32b1f1ea2391b7509a6ec8a5dc23"
     }
   ]
 }

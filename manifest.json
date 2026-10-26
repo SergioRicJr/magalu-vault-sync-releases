@@ -1,7 +1,7 @@
 {
   "id": "magalu-vault-sync",
   "name": "Magalu Vault Sync",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "minAppVersion": "1.13.0",
   "description": "Sincroniza notas e anexos com S3 da Magalu, com criptografia e histórico de revisões.",
   "author": "SergioRicJr",
