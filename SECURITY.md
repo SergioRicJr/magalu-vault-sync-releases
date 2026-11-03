@@ -1,6 +1,6 @@
 # Segurança
 
-Este projeto distribui o plugin Magalu Vault Sync. Consulte a versão exata
+Este projeto distribui o plugin Sync with Magalu Cloud. Consulte a versão exata
 instalada e as limitações em [README.md](README.md). Os arquivos públicos são
 MIT; o desenvolvimento TypeScript fica em um repositório privado. Não há
 garantia de ausência de falhas nem auditoria independente anunciada.
@@ -45,7 +45,7 @@ somente plugins em que confia.
 
 ## Versões
 
-Esta publicação descreve a versão 0.2.2. Use uma release fixa, confira
+Esta publicação descreve a versão 0.2.3. Use uma release fixa, confira
 os hashes publicados e leia as mudanças antes de substituir os arquivos. O
 plugin não instala atualizações nem dependências automaticamente. A presença
 no catálogo ou um resultado de scanner não equivale a endosso do provedor ou

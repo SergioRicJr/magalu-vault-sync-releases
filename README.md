@@ -1,16 +1,20 @@
-# Magalu Vault Sync
+# Sync with Magalu Cloud
 
 Sincronize notas e anexos do Obsidian com o Object Storage da Magalu Cloud,
 usando criptografia no aparelho e histórico de revisões. Este é um **plugin
 independente da comunidade**, sem afiliação com a Magalu Cloud ou o Obsidian.
 
 **Disponível no [catálogo da comunidade](https://community.obsidian.md/plugins/magalu-vault-sync).**
-No Obsidian, use **Configurações → Plugins da comunidade → Explorar → Magalu
-Vault Sync → Instalar → Habilitar**. Confira o autor **SergioRicJr**.
+No Obsidian, use **Configurações → Plugins da comunidade → Explorar → Sync with Magalu Cloud → Instalar → Habilitar**. Confira o autor **SergioRicJr**.
 
-Versão desta publicação: **0.2.2**. Obsidian mínimo: **1.13.0**.
+Versão desta publicação: **0.2.3**. Obsidian mínimo: **1.13.0**.
+
+A partir da 0.2.3, o plugin passa a se chamar **Sync with Magalu Cloud**.
+Quem já usa o plugin pode atualizar normalmente: as configurações, chaves
+e notas são preservadas, sem reinstalação nem repetição do assistente.
+Mantenha a pasta de instalação existente.
 O programa usa APIs portáteis para Windows e Android. A validação física
-específica da versão final 0.2.2 no Android ainda não está registrada;
+específica da versão 0.2.3 no Android ainda não está registrada;
 teste primeiro com um cofre fictício.
 
 O projeto passou por mais de 200 testes automatizados, incluindo uma
@@ -137,17 +141,17 @@ e a cobrança na documentação do provedor.
 2. Escolha uma pasta local fora de OneDrive, Google Drive, Dropbox ou outro
    sincronizador. Use somente um mecanismo de sincronização por pasta.
 3. No cofre escolhido, abra **Configurações → Plugins da comunidade →
-   Explorar**. Procure **Magalu Vault Sync**, autor **SergioRicJr**, e use
+   Explorar**. Procure **Sync with Magalu Cloud**, autor **SergioRicJr**, e use
    **Instalar → Habilitar**. Também é possível abrir a
    [página do catálogo](https://community.obsidian.md/plugins/magalu-vault-sync)
    e usar **Add to Obsidian**, escolhendo o cofre correto no aplicativo.
-4. Abra **Configurações → Magalu Vault Sync**. A instalação e configuração
+4. Abra **Configurações → Sync with Magalu Cloud**. A instalação e configuração
    são feitas por cofre; outro cofre exige habilitar o plugin nele também.
 
 ### Alternativa: instalação manual
 
-1. Baixe o pacote `magalu-vault-sync-0.2.2.zip` da
-   [release 0.2.2](https://github.com/SergioRicJr/magalu-vault-sync-releases/releases/tag/0.2.2)
+1. Baixe o pacote `sync-with-magalu-cloud-0.2.3.zip` da
+   [release 0.2.3](https://github.com/SergioRicJr/magalu-vault-sync-releases/releases/tag/0.2.3)
    e confira seu arquivo `.zip.sha256`. Ele contém a pasta
    `magalu-vault-sync` com três arquivos de programa, LICENSE e NOTICE.
    Também é possível baixar `main.js`, `manifest.json` e `styles.css`
@@ -161,8 +165,7 @@ e a cobrança na documentação do provedor.
    <SEU_COFRE>/.obsidian/plugins/magalu-vault-sync/
    ```
 
-3. Abra o Obsidian, permita plugins da comunidade e habilite **Magalu Vault
-   Sync**. Abra a página de configurações do plugin.
+3. Abra o Obsidian, permita plugins da comunidade e habilite **Sync with Magalu Cloud**. Abra a página de configurações do plugin.
 
 ## Cofres locais já existentes
 
@@ -241,9 +244,9 @@ no mesmo caminho podem virar ramos de conflito.
 1. Crie no Obsidian um cofre local vazio para receber as notas do computador,
    ou siga as orientações para um cofre já existente, mantendo um backup.
 2. Nesse cofre, use **Configurações → Plugins da comunidade → Explorar →
-   Magalu Vault Sync → Instalar → Habilitar**. O Obsidian precisa atender à
+   Sync with Magalu Cloud → Instalar → Habilitar**. O Obsidian precisa atender à
    versão mínima indicada no início deste documento.
-3. Abra **Configurações → Magalu Vault Sync → Abrir assistente → Conectar ao
+3. Abra **Configurações → Sync with Magalu Cloud → Abrir assistente → Conectar ao
    cofre existente** e escolha a
    mesma região, bucket e prefixo. Cadastre o par S3 do celular e
    importe a chave de recuperação original, usando os formulários separados.
@@ -279,7 +282,7 @@ entre eles. Não copie o estado nem os segredos de outro aparelho.
    Após a primeira rodada manual bem-sucedida, ela reage às alterações
    agrupadas, à retomada do aplicativo e a uma verificação a cada dois minutos.
 
-No computador, **Ctrl+P → Magalu Vault Sync: Sincronizar agora** oferece o
+No computador, **Ctrl+P → Sync with Magalu Cloud: Sincronizar agora** oferece o
 mesmo comando do botão nas configurações e do ícone de nuvem. Aguarde a
 conclusão antes de fechar o aplicativo ou mudar de aparelho. Não edite a
 mesma nota nos dois aparelhos sem sincronizar entre as edições.
@@ -302,8 +305,7 @@ Antes de substituir ou remover um arquivo local, o plugin procura preservar
 uma cópia em `.magalu-sync-recovery/`, dentro do cofre. Faça backup antes de
 restaurar. Para recuperar uma cópia local:
 
-1. Em **Configurações → Plugins da comunidade**, desative **Magalu Vault
-   Sync** em todos os aparelhos. Preserve uma cópia da nota atual, se existir.
+1. Em **Configurações → Plugins da comunidade**, desative **Sync with Magalu Cloud** em todos os aparelhos. Preserve uma cópia da nota atual, se existir.
 2. No gerenciador de arquivos, habilite a exibição de pastas ocultas e abra
    `.magalu-sync-recovery/` dentro da pasta do cofre. As cópias são organizadas
    por data, identificador e caminho original.
